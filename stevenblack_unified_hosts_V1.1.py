@@ -4,8 +4,8 @@ import urllib2
 
 def main():
 
-	#target_url='https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
-	target_url='https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts'
+	target_url='https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
+#	target_url='https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts'
 	output_dir='unified_host_f_g_p'
 	output_script='stevenblack'
 	description=''
@@ -112,15 +112,15 @@ def main():
 			f.write(rule_remote_domain)
 			f.write(rule_end)
 			rule_count+=1
-			if rule_count == 10000 :
-				print("10,000 rules completed, closing file")
+			if rule_count == 1000000 :
+				print("1000,000 rules completed, closing file")
 				f.write(end)
 				f.close()
 				script_number+=1
 				rule_count=0
 				first_rule=True
 				#print("rule-count reset done")
-	if rule_count<10000 :				
+	if rule_count<1000000 :				
 		f.write(end)
 		f.close()
 		print(str(rule_count)+' completed, closing the file')
